@@ -1,0 +1,121 @@
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.radioItem {
+  display: flex;
+  align-items: flex-start;
+}
+
+.radioContainer {
+  position: relative;
+  display: inline-block;
+  min-width: 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  gap: 10px;
+  background: var(--color-white);
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.radioCustom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background: var(--color-white);
+  border: 1px solid var(--color-text-tertiary);
+  box-sizing: border-box;
+}
+
+.radioContainer.checked .radioCustom {
+  gap: 8px;
+  padding: 5px;
+  background: var(--color-primary);
+  border: none;
+}
+
+.radioContainer.checked .radioCustom::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-white);
+}
+.radioContainer.checked.disabled .radioCustom::after {
+  top: 4px;
+  left: 4px;
+}
+.radioContainer.checked.error .radioCustom::after {
+  background: var(--color-error);
+  top: 4px;
+  left: 4px;
+}
+
+.radioInput:focus + .radioCustom {
+  box-shadow: 0 0 0 1px var(--color-white), 0 0 0 2px var(--color-focus-border),
+    0 0 0 4px var(--color-shadow-focus);
+}
+
+.radioContainer.disabled.checked .radioCustom::after {
+  background: var(--color-border);
+}
+
+.radioContainer.disabled .radioCustom {
+  gap: 10px;
+  background: var(--color-disabled-background);
+  border: 1px solid var(--color-border);
+}
+
+.radioContainer.error .radioCustom {
+  gap: 10px;
+  background: var(--color-white);
+  border: 1px solid var(--color-error);
+}
+
+.radioContainer.error.checked .radioCustom {
+  background: var(--color-white);
+  border: 1px solid var(--color-error);
+}
+
+.radioContainer.error .radioInput:focus + .radioCustom {
+  background: var(--color-white);
+  border: 1px solid var(--color-error);
+  box-shadow: 0 0 0 1px var(--color-white), 0 0 0 2px var(--color-error),
+    0 0 0 4px var(--color-shadow-error);
+}
+
+.radioLabel {
+  margin-left: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text);
+  cursor: pointer;
+}
+.radioLabel.disabled {
+  cursor: not-allowed;
+}
+.radioLabel.error {
+  color: var(--color-error);
+}

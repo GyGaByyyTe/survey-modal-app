@@ -1,0 +1,112 @@
+.header {
+  height: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: var(--color-success-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-text);
+  margin: 0;
+  text-align: center;
+}
+
+.content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 64px;
+  background: var(--color-success-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.checkmark {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.checkmark::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background-color: var(--color-white);
+  transform: rotate(-45deg);
+  top: 14px;
+  left: 9px;
+  border-radius: 5px;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: var(--color-white);
+  transform: rotate(45deg);
+  top: 5px;
+  left: 19px;
+  border-radius: 5px;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 32px;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.subheading {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text);
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+.buttonContainer {
+  padding: 32px;
+  width: 100%;
+}
+
+/* Mobile styles for screens less than 450px wide */
+@media (max-width: 449px) {
+  .content {
+    padding: 24px;
+  }
+
+  .heading {
+    font-size: 16.5px;
+    line-height: 24px;
+    margin: 0 0 6px 0;
+  }
+
+  .subheading {
+    margin: 0 0 24px 0;
+  }
+
+  .buttonContainer {
+    padding: 24px;
+  }
+}

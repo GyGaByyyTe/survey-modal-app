@@ -1,0 +1,113 @@
+.textareaContainer {
+  position: relative;
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 100px;
+  border-radius: 4px;
+  padding: 10px 16px;
+  gap: 4px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px 0 var(--color-shadow);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text);
+  resize: none;
+  overflow-y: auto;
+  font-family: inherit;
+}
+
+.textarea:focus {
+  outline: none;
+  border: 1px solid var(--color-border-focus);
+  box-shadow: inset 0 0 0 1px var(--color-border-focus),
+    0 0 0 2px var(--color-shadow-focus);
+}
+
+.textarea.error {
+  border: 1px solid var(--color-border-error);
+  background: var(--color-error-background);
+  box-shadow: 0 1px 3px 0 var(--color-shadow);
+  padding-right: 40px;
+}
+
+.textarea.error:focus {
+  background: var(--color-background);
+  border: 1px solid var(--color-border-error);
+  box-shadow: inset 0 0 0 1px var(--color-border-error),
+    0 0 0 2px var(--color-shadow-error);
+}
+
+.textarea.disabled {
+  background: var(--color-disabled-background);
+  border: 1px solid var(--color-border-disabled);
+  box-shadow: 0 1px 3px 0 var(--color-shadow);
+  cursor: not-allowed;
+}
+
+/* Add padding for clear button */
+.textarea.hasClearButton {
+  padding: 10px 40px 10px 16px; /* Make room for the clear button */
+}
+
+/* Add padding for both clear button and error icon */
+.textarea.error.hasBothIcons {
+  padding: 10px 70px 10px 16px; /* Make room for both icons */
+}
+
+.textarea::placeholder {
+  color: var(--color-placeholder);
+}
+
+/* Clear button styles */
+.clearButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+}
+
+/* Clear icon (X) */
+.clearIcon {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+.clearIcon::before,
+.clearIcon::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: var(--color-icon);
+  top: 50%;
+  left: 0;
+}
+
+.clearIcon::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.clearIcon::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* Move error icon to the left when clear button is present */
+.withClearButton {
+  right: 40px !important;
+}

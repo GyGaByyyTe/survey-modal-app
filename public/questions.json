@@ -1,0 +1,35 @@
+[
+  {
+    "text": "Select your country of residence",
+    "type": "select",
+    "options": ["United States", "Canada", "United Kingdom", "Other"],
+    "required": true
+  },
+  {
+    "text": "Which devices do you use to access the internet?",
+    "type": "multiple-checkbox",
+    "options": ["Computer / Laptop", "Smartphone", "Tablet"],
+    "required": true
+  },
+  {
+    "text": "What is your preferred mode of transportation for traveling?",
+    "type": "radio",
+    "options": ["Airplane", "Train", "Car"],
+    "required": false
+  },
+  {
+    "text": "What do you want to achieve in the next year?",
+    "type": "textarea",
+    "required": true
+  },
+  {
+    "text": "Please enter your age",
+    "type": "text",
+    "required": false
+  },
+  {
+    "text": "I consent to the processing of my personal data",
+    "type": "single-checkbox",
+    "required": true
+  }
+]
