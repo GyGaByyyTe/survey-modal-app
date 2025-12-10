@@ -80,7 +80,7 @@ module.exports = (env, argv) => {
         patterns: [
           {
             from: "public",
-            to: "dist",
+            to: "",
             globOptions: { ignore: ["**/index.html"] },
           },
         ],
